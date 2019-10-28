@@ -8,7 +8,7 @@ const p = Promise.resolve()
 let isFlushing = false
 
 export function nextTick(fn?: () => void): Promise<void> {
-  return fn ? p.then(fn) : p
+  return p.then(fn)
 }
 
 export function queueJob(job: () => void) {
